@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx wdio run wdio.conf.ts",
     "wdio": "wdio run ./wdio.conf.ts"
   },
   "private": true,
   "dependencies": {
+    "dotenv": "^17.2.2",
     "webdriver": "^9.19.2"
   },
   "devDependencies": {
