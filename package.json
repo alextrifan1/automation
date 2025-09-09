@@ -1,0 +1,24 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wdio": "wdio run ./wdio.conf.ts"
+  },
+  "private": true,
+  "dependencies": {
+    "webdriver": "^9.19.2"
+  },
+  "devDependencies": {
+    "@testing-library/webdriverio": "^3.2.1",
+    "@wdio/cli": "^9.19.2",
+    "@wdio/globals": "^9.17.0",
+    "@wdio/local-runner": "^9.19.2",
+    "@wdio/mocha-framework": "^9.19.2",
+    "@wdio/spec-reporter": "^9.19.2",
+    "wdio-wait-for": "^3.1.0",
+    "webdriver-manager": "^12.1.9"
+  }
+}

@@ -1,0 +1,21 @@
+# Node dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test outputs / reports
+reports/
+allure-results/
+wdio-*.log
+
+# Build folders
+dist/
+build/
+
+# Environment variables
+.env
