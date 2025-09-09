@@ -19,3 +19,6 @@ build/
 
 # Environment variables
 .env
+
+# Others
+commits.txt
