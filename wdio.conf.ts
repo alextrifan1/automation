@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import type { Options } from '@wdio/types';
+import {openApp} from "./test/utils/navigation.ts";
 
 export const config = {
     runner: 'local',
@@ -21,5 +22,9 @@ export const config = {
 
     framework: 'mocha',
     reporters: ['spec'],
-    mochaOpts: { ui: 'bdd', timeout: 60000 }
+    mochaOpts: { ui: 'bdd', timeout: 60000 },
+
+    before: async function(capabilities, specs)  {
+        await openApp(process.env.START_PATH ?? '/')
+    }
 } as unknown as Options.Testrunner;
