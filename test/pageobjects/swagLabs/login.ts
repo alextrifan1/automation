@@ -6,12 +6,15 @@ export default class LoginPage {
 
     async login() {
         const usernames = await this.getUsernameList();
-        const usernameType = usernames[1];
+        const usernameType = usernames[0];
         const passwords = await this.getPasswordList();
-        const passwordType = await passwords[1];
-        const usernameField = await this.getUsernameField();
+        const passwordType = await passwords.replace("Password for all users:", "").trim();
 
-        usernameField.setValue(usernameType);
+        const usernameField = await this.getUsernameField();
+        const passwordField = await this.getPasswordField();
+
+        await usernameField.setValue(usernameType);
+        await passwordField.setValue(passwordType);
     }
 
     async getUsernameField(): Promise<ChainablePromiseElement> {
@@ -22,8 +25,9 @@ export default class LoginPage {
         return $(loginPageLocator.passwordField);
     }
 
-    async getUsernameList(): Promise<string> {
-        return await $(loginPageLocator.usernameList).getText();
+    async getUsernameList(): Promise<string[]> {
+        const usernameText = await $(loginPageLocator.usernameList).getText();
+        return usernameText.replace("Accepted usernames are:", "").trim().split('\n');
     }
 
     async getPasswordList(): Promise<string> {
@@ -31,7 +35,9 @@ export default class LoginPage {
     }
 
     async tapLoginButton(): Promise<void> {
-        await $(loginPageLocator.logginBtn).tap();
+        const loginButton =  await $(loginPageLocator.logginBtn);
+        loginButton.waitForClickable({timeout: 30000});
+        loginButton.click();
     }
 
     async isTitleDisplayed(): Promise<boolean> {

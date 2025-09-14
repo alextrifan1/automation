@@ -2,7 +2,7 @@ export const loginPageLocator = {
     pageTitle: '#login-logo',
     usernameField: '#user-name',
     passwordField: '#password',
-    logginBtn: '#loggin-button',
+    logginBtn: '#login-button',
     usernameList: '#login_credentials',
-    passwordList: '#login_password'
+    passwordList: '.login_password'
 }
