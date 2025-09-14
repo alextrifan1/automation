@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import type { Options } from '@wdio/types';
 import {openApp} from "./test/utils/navigation.ts";
+import {browser} from "@wdio/globals";
 
 export const config = {
     runner: 'local',
@@ -26,5 +27,12 @@ export const config = {
 
     before: async function(capabilities, specs)  {
         await openApp(process.env.START_PATH ?? '/')
+    },
+
+    afterTest: async function(test, context, {error, result, duration, passed, retries}) {
+        if (!passed) {
+            const timestamp = new Date().toISOString().replace(/:/g, "-");
+            await browser.saveScreenshot(`./errorShots/${test.title}_${timestamp}.png`);
+        }
     }
 } as unknown as Options.Testrunner;
