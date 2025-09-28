@@ -1,7 +1,15 @@
 import { loginPageLocator } from '../../locators/swagLabsLocators/loginPage.ts';
 import { $ } from '@wdio/globals';
+import {isDisplayedSafe} from "../../utils/helpers.ts";
 
+//TODO: Make login function to accept parameters for username and password
+//TODO: decide on locator structure
 export default class LoginPage {
+
+  private get pageTitle() {
+    return $('.login_logo');
+  }
+
   async login() {
     const usernames = await this.getUsernameList();
     const usernameType = usernames[0];
@@ -39,6 +47,6 @@ export default class LoginPage {
   }
 
   async isTitleDisplayed(): Promise<boolean> {
-    return $(loginPageLocator.pageTitle).isDisplayed();
+    return isDisplayedSafe(this.pageTitle);
   }
 }

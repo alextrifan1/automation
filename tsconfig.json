@@ -15,5 +15,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["test", "wdio.conf.ts"]
+  "include": [
+    "test",
+    "wdio.conf.ts",
+    "node_modules/@wdio/globals/types.d.ts",
+    "node_modules/@wdio/globals/types.d.ts"
+  ]
 }
