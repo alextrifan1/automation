@@ -1,3 +1,1 @@
-export const productPageLocator = {
-
-}
+export const productPageLocator = {};

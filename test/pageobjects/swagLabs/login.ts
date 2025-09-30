@@ -1,11 +1,10 @@
 import { loginPageLocator } from '../../locators/swagLabsLocators/loginPage.ts';
 import { $ } from '@wdio/globals';
-import {isDisplayedSafe} from "../../utils/helpers.ts";
+import { isDisplayedSafe } from '../../utils/helpers.ts';
 
 //TODO: Make login function to accept parameters for username and password
 //TODO: decide on locator structure
 export default class LoginPage {
-
   private get pageTitle() {
     return $('.login_logo');
   }
