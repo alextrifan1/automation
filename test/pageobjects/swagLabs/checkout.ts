@@ -5,7 +5,16 @@ import { $, $$ } from '@wdio/globals';
 
 export default class CheckoutPage {
   private get yourInformationTitle() {
-    return $(`//span[@data-test="title" and normalize-space(text())="Checkout: Your Information"]`);
+    return $('[data-test="title"]:text("Checkout: Your Information")');
+
+  }
+
+  private get overviewTitle() {
+    return $('[data-test="title"]:text("Checkout: Overview")');
+  }
+
+  private get completeTitle() {
+    return $('[data-test="title"]:text("Checkout: Complete!")');
   }
 
   private get cancelButton() {
@@ -30,8 +39,12 @@ export default class CheckoutPage {
 
   //
 
-  async isPageTitleDisplayed(): Promise<boolean> {
+  async isInformationPageDisplayed(): Promise<boolean> {
     return isDisplayedSafe(this.yourInformationTitle);
+  }
+
+  async isOverviewPageDisplayed(): Promise<boolean> {
+    return isDisplayedSafe(this.overviewTitle);
   }
 
   async enterFirstName(firstName: string): Promise<void> {

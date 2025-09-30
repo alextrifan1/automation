@@ -1,11 +1,9 @@
 import { $, $$ } from '@wdio/globals';
 import { isDisplayedSafe } from '../../utils/helpers.ts';
 
-//TODO: decide on locator structure
 //TODO: add remove item method
-//TODO: rename to InventoryPage
 
-export default class ProductPage {
+export default class InventoryPage {
   private get inventoryItems() {
     return $$('.inventory_item');
   }

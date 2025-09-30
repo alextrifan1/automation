@@ -2,24 +2,18 @@ import { loginPageLocator } from '../../locators/swagLabsLocators/loginPage.ts';
 import { $ } from '@wdio/globals';
 import { isDisplayedSafe } from '../../utils/helpers.ts';
 
-//TODO: Make login function to accept parameters for username and password
-//TODO: decide on locator structure
+//TODO: change locators to use getter methods
 export default class LoginPage {
   private get pageTitle() {
     return $('.login_logo');
   }
 
-  async login() {
-    const usernames = await this.getUsernameList();
-    const usernameType = usernames[0];
-    const passwords = await this.getPasswordList();
-    const passwordType = await passwords.replace('Password for all users:', '').trim();
-
+  async login(username: string, password: string): Promise<void> {
     const usernameField = await this.getUsernameField();
     const passwordField = await this.getPasswordField();
 
-    await usernameField.setValue(usernameType);
-    await passwordField.setValue(passwordType);
+    await usernameField.setValue(username);
+    await passwordField.setValue(password);
   }
 
   async getUsernameField(): Promise<ChainablePromiseElement> {

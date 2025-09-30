@@ -42,7 +42,7 @@ npm run test
 This command will run all the test files located in the `test/specs` directory. To run a specific test file, you can set the `SPEC_TO_RUN` environment variable:
 
 ```bash
-SPEC_TO_RUN=./test/specs/loginFlow.e2e.ts npm run test
+SPEC_TO_RUN=./test/specs/l_001.e2e.ts npm run test
 ```
 
 ### Development Scripts
@@ -66,7 +66,7 @@ SPEC_TO_RUN=./test/specs/loginFlow.e2e.ts npm run test
 
 The project follows a standard structure for WebdriverIO projects, with a clear separation of concerns:
 
-*   `test/specs`: Contains the test files (e.g., `loginFlow.e2e.ts`).
+*   `test/specs`: Contains the test files (e.g., `l_001.e2e.ts`).
 *   `test/pageobjects`: Contains the page objects, which encapsulate the logic for interacting with specific pages of the application.
 *   `test/locators`: Contains the locators (e.g., CSS selectors) for the elements on the pages.
 *   `test/utils`: Contains utility functions that can be reused across the tests.

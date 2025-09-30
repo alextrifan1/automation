@@ -1,7 +1,6 @@
 import { isDisplayedSafe } from '../../utils/helpers.ts';
 import { $, $$ } from '@wdio/globals';
 
-//TODO: decide on locator structure
 //TODO: add remove item method
 
 export default class CartPage {
