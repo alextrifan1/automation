@@ -8,6 +8,11 @@ export default class LoginPage {
     return $('.login_logo');
   }
 
+  private get errorMessageContainer() {
+    return $('h3[data-test="error"]');
+  }
+
+
   async login(username: string, password: string): Promise<void> {
     const usernameField = await this.getUsernameField();
     const passwordField = await this.getPasswordField();
@@ -22,6 +27,10 @@ export default class LoginPage {
 
   async getPasswordField(): Promise<ChainablePromiseElement> {
     return $(loginPageLocator.passwordField);
+  }
+
+  async getErrorText(): Promise<string> {
+    return await this.errorMessageContainer.getText();
   }
 
   async getUsernameList(): Promise<string[]> {
@@ -41,5 +50,9 @@ export default class LoginPage {
 
   async isTitleDisplayed(): Promise<boolean> {
     return isDisplayedSafe(this.pageTitle);
+  }
+
+  async isErrorMessageContainerDisplayed(): Promise<boolean> {
+    return isDisplayedSafe(this.errorMessageContainer);
   }
 }
