@@ -49,6 +49,11 @@ export default class InventoryPage {
     throw new Error(`Product with name "${productName}" was not found`);
   }
 
+  async removeFromCartByIndex(productIndex: number): Promise<void> {
+    const items = await this.inventoryItems;
+    await this.tapAddToCartButton(items[productIndex]);
+  }
+
   private async tapAddToCartButton(product: ChainablePromiseElement): Promise<void> {
     const button = await this.getProductButton(product);
     if (!button) {
@@ -119,6 +124,12 @@ export default class InventoryPage {
     return null;
   }
 
+  async getProductButtonTextByIndex(productIndex: number): Promise<string> {
+    const items = await this.inventoryItems;
+    const button = await this.getProductButton(items[productIndex]);
+    return (await button.getText()).trim();
+  }
+
   // Filtering
 
   async applyFilter(
@@ -132,5 +143,22 @@ export default class InventoryPage {
     };
 
     await this.sortDropdown.selectByAttribute('value', map[filter]);
+  }
+
+  async areAllProductsDisplayed(): Promise<boolean> {
+    const items = await this.inventoryItems;
+
+    for (const product of items) {
+      const titleElement = this.getProductTitleElement(product);
+      const priceElement = this.getProductPriceElement(product);
+      const buttonElement = this.getProductButton(product);
+
+      if (!(await isDisplayedSafe(titleElement)) ||
+          !(await isDisplayedSafe(priceElement)) ||
+          !(await isDisplayedSafe(buttonElement))) {
+        return false;
+      }
+    }
+    return true;
   }
 }
