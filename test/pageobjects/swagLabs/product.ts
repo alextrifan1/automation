@@ -153,9 +153,11 @@ export default class InventoryPage {
       const priceElement = this.getProductPriceElement(product);
       const buttonElement = this.getProductButton(product);
 
-      if (!(await isDisplayedSafe(titleElement)) ||
-          !(await isDisplayedSafe(priceElement)) ||
-          !(await isDisplayedSafe(buttonElement))) {
+      if (
+        !(await isDisplayedSafe(titleElement)) ||
+        !(await isDisplayedSafe(priceElement)) ||
+        !(await isDisplayedSafe(buttonElement))
+      ) {
         return false;
       }
     }

@@ -12,7 +12,6 @@ export default class LoginPage {
     return $('h3[data-test="error"]');
   }
 
-
   async login(username: string, password: string): Promise<void> {
     const usernameField = await this.getUsernameField();
     const passwordField = await this.getPasswordField();

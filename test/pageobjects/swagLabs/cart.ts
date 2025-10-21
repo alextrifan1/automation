@@ -54,7 +54,7 @@ export default class CartPage {
     const results: string[] = [];
 
     for (const item of items) {
-      const el = await item.$(selector) as ChainablePromiseElement<WebdriverIO.Element>;
+      const el = (await item.$(selector)) as ChainablePromiseElement<WebdriverIO.Element>;
       results.push((await el.getText()).trim());
     }
 

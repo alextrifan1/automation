@@ -6,7 +6,6 @@ import { $, $$ } from '@wdio/globals';
 export default class CheckoutPage {
   private get yourInformationTitle() {
     return $('[data-test="title"]:text("Checkout: Your Information")');
-
   }
 
   private get overviewTitle() {
