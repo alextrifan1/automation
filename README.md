@@ -1,10 +1,8 @@
-# GEMINI Project Overview: WebdriverIO E2E Automation
+# Automated E2E Testing Framework with WebdriverIO and TypeScript
 
 ## Project Overview
 
-This project is a test automation framework for conducting end-to-end (E2E) testing on web applications. It is built using WebdriverIO, a powerful and flexible test automation framework for Node.js. The project is written in TypeScript, which provides strong typing and modern JavaScript features, enhancing code quality and maintainability.
-
-The framework is designed to test the "Swag Labs" demo website and includes a sample test for the login flow. It follows the Page Object Model (POM) design pattern, which encapsulates page-specific information into separate classes, making the tests cleaner and easier to maintain.
+This project is a test automation framework for conducting end-to-end (E2E) & api testing on web applications. It is built using WebdriverIO. The project is written in TypeScript and utilizes Mocha as the test framework along with the Expect-WebdriverIO assertion library.
 
 ### Key Technologies
 
