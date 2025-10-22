@@ -13,7 +13,11 @@
   },
   "private": true,
   "dependencies": {
+    "@wdio/logger": "^9.18.0",
+    "axios": "^1.12.2",
+    "chai": "^6.2.0",
     "dotenv": "^17.2.2",
+    "mocha": "^11.7.4",
     "webdriver": "^9.19.2"
   },
   "devDependencies": {
