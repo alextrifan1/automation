@@ -43,21 +43,6 @@ This command will run all the test files located in the `test/specs` directory. 
 SPEC_TO_RUN=./test/specs/l_001.e2e.ts npm run test
 ```
 
-### Development Scripts
-
-*   **Linting:** To check the code for linting errors, run:
-    ```bash
-    npm run lint
-    ```
-    To automatically fix linting errors, run:
-    ```bash
-    npm run lint:fix
-    ```
-*   **Formatting:** To format the code using Prettier, run:
-    ```bash
-    npm run format
-    ```
-
 ## Development Conventions
 
 ### Project Structure
