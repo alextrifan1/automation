@@ -8,21 +8,20 @@ const isApiTest = process.env.TEST_TYPE === 'api';
 export const config: Options.Testrunner = {
   runner: 'local',
   tsConfigPath: './tsconfig.json',
-  
+
   specs: process.env.SPEC_TO_RUN
-      ? process.env.SPEC_TO_RUN.split(',')
-      : isApiTest
-          ? ['./test/specs/api/**/*.ts']
-          : ['./test/specs/ui/**/*.ts'],
+    ? process.env.SPEC_TO_RUN.split(',')
+    : isApiTest
+      ? ['./test/specs/api/**/*.ts']
+      : ['./test/specs/ui/**/*.ts'],
 
   //
   // Capabilities: only if UI tests
   //
   maxInstances: 10,
   capabilities: isApiTest
-      ? [{ browserName: 'chrome', maxInstances: 1, 'wdio:headless': true }]  // dummy capability for API tests
-      : [{ browserName: 'chrome' }],
-
+    ? [{ browserName: 'chrome', maxInstances: 1, 'wdio:headless': true }] // dummy capability for API tests
+    : [{ browserName: 'chrome' }],
 
   logLevel: 'info',
   bail: 0,
