@@ -1,7 +1,7 @@
-import InventoryPage from '../../pageobjects/swagLabs/product.ts';
-import LoginPage from '../../pageobjects/swagLabs/login.ts';
+import InventoryPage from '../../../pageobjects/swagLabs/product.ts';
+import LoginPage from '../../../pageobjects/swagLabs/login.ts';
 import { expect } from '@wdio/globals';
-import users from '../../test-data/users.json' with { type: 'json' };
+import users from '../../../test-data/users.json' with { type: 'json' };
 
 describe('Inventory - price filter', () => {
   it('applies low->high then high->low filters and verifies price order', async () => {

@@ -1,8 +1,8 @@
-import InventoryPage from '../../pageobjects/swagLabs/product.ts';
-import LoginPage from '../../pageobjects/swagLabs/login.ts';
-import CartPage from '../../pageobjects/swagLabs/cart.ts';
+import InventoryPage from '../../../pageobjects/swagLabs/product.ts';
+import LoginPage from '../../../pageobjects/swagLabs/login.ts';
+import CartPage from '../../../pageobjects/swagLabs/cart.ts';
 import { expect } from '@wdio/globals';
-import users from '../../test-data/users.json' with { type: 'json' };
+import users from '../../../test-data/users.json' with { type: 'json' };
 
 describe('Inventory - add 3 products and verify cart', () => {
   it('adds three products and verifies cart list and count', async () => {

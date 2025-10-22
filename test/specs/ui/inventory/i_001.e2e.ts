@@ -1,7 +1,7 @@
-import LoginPage from '../../pageobjects/swagLabs/login.ts';
+import LoginPage from '../../../pageobjects/swagLabs/login.ts';
 import { expect } from '@wdio/globals';
-import InventoryPage from '../../pageobjects/swagLabs/product.ts';
-import users from '../../test-data/users.json' with { type: 'json' };
+import InventoryPage from '../../../pageobjects/swagLabs/product.ts';
+import users from '../../../test-data/users.json' with { type: 'json' };
 
 describe('Inventory - check if page is loaded', () => {
   it('should check if the inventory page is loaded', async () => {

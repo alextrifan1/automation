@@ -1,7 +1,7 @@
-import InventoryPage from '../../pageobjects/swagLabs/product.ts';
-import LoginPage from '../../pageobjects/swagLabs/login.ts';
+import InventoryPage from '../../../pageobjects/swagLabs/product.ts';
+import LoginPage from '../../../pageobjects/swagLabs/login.ts';
 import { expect } from '@wdio/globals';
-import users from '../../test-data/users.json' with { type: 'json' };
+import users from '../../../test-data/users.json' with { type: 'json' };
 
 describe('Inventory - add and remove product', () => {
   it('should add a product and then remove it, updating the cart badge', async () => {

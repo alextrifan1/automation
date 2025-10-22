@@ -1,6 +1,6 @@
-import LoginPage from '../../pageobjects/swagLabs/login.ts';
+import LoginPage from '../../../pageobjects/swagLabs/login.ts';
 import { expect } from '@wdio/globals';
-import users from '../../test-data/users.json' with { type: 'json' };
+import users from '../../../test-data/users.json' with { type: 'json' };
 
 describe('E2E Login flow for Swag Labs', () => {
   it('should perform login with a locked out user', async () => {
